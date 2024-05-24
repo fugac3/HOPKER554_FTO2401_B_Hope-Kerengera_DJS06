@@ -98,3 +98,52 @@ console.log(
     return eachProduct.product.length <= 5; //filter out products with names longer than 5 letters
   })
 );
+
+//3. FILTER BY PRICE
+console.log(
+  (function () {
+    const productsWithPrices = products.filter(
+      (product) => typeof product.price === "number" && !isNaN(product.price)
+    );
+
+    const productsWithValidPrices = productsWithPrices.map((product) => ({
+      ...product,
+      price: parseFloat(product.price),
+    }));
+
+    const totalPrice = productsWithValidPrices.reduce(
+      (total, product) => total + product.price,
+      0
+    );
+
+    return totalPrice;
+  })()
+);
+
+//4. CONCATENATE PRODUCT NAMES
+console.log(
+  products.reduce((acc, currentProduct) => {
+    return acc + currentProduct.product; //add current product name to accumulator to create one long string of product names
+  }, "")
+);
+
+//5. FIND EXTREMES IN PRICES
+console.log(
+  (function () {
+    const findExtremes = (products) => {
+      const highestPriceItem = products.reduce((highest, current) => {
+        return highest.price > current.price ? highest : current;
+      });
+
+      // Find the lowest-priced item
+      const lowestPriceItem = products.reduce((lowest, current) => {
+        return lowest.price < current.price ? lowest : current;
+      });
+
+      return `Highest: ${highestPriceItem.product}. Lowest: ${lowestPriceItem.product}.`;
+    };
+
+    return findExtremes(products);
+  })()
+);
+//6. OBJECT TRANSFORMATION
