@@ -146,4 +146,17 @@ console.log(
     return findExtremes(products);
   })()
 );
+
 //6. OBJECT TRANSFORMATION
+console.log(
+  (function () {
+    const changedProductKeys = Object.entries(products).reduce(
+      (acc, [name, cost]) => {
+        acc.push({ name, cost });
+        return acc;
+      },
+      [] //starts off as empty array
+    );
+    return changedProductKeys;
+  })()
+);
