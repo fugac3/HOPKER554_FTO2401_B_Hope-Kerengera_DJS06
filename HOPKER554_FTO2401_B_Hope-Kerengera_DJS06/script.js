@@ -91,3 +91,10 @@ console.log(
     return eachProduct.product; //get the product name from EACH product
   })
 );
+
+//2. FILTER BY NAME LENGTH
+console.log(
+  products.filter((eachProduct) => {
+    return eachProduct.product.length <= 5; //filter out products with names longer than 5 letters
+  })
+);
