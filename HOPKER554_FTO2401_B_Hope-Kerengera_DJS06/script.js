@@ -80,8 +80,14 @@ console.log(findingS);
 const nameProvinceObject = names.reduce((acc, currentName, currentIndex) => {
   acc[currentName] = provinces[currentIndex]; //creating the object with key "currentName" and value "provinces[currentIndex]"
   return acc;
-}, {});
+}, {}); //"{}" starts off as empty object
 console.log(nameProvinceObject);
 ///////////////////////////////////////////////////ADVANCED EXERCISES////////////////////////////////////////////////////
 
-//ADVANCED EXERCISES//
+//1. LOG PRODUCTS
+console.log(
+  products.map((eachProduct) => {
+    //return new array with product names
+    return eachProduct.product; //get the product name from EACH product
+  })
+);
