@@ -51,11 +51,22 @@ const uppercaseProvinces = provinces.map((province) => {
 });
 console.log(uppercaseProvinces);
 
-//3. Name Lengths
+//3. NAME LENGTHS
+const nameLength = names.map((name) => {
+  return name.length; //gets the length of each name
+});
+console.log(nameLength);
 
-//4. Sorting
+//4. SORTING
+const sortedProvinces = provinces.sort(); //alphabetically sorts provinces
+console.log(sortedProvinces);
 
-//5. Filtering Cape
+//5. FILTERING CAPE
+const filteredProvinces = provinces.filter((province) => {
+  return !province.includes("Cape"); //remove provinces that include "Cape"
+});
+//log the count of remaining provinces
+console.log(filteredProvinces.length);
 
 //6. Finding "S"
 
