@@ -68,8 +68,20 @@ const filteredProvinces = provinces.filter((province) => {
 //log the count of remaining provinces
 console.log(filteredProvinces.length);
 
-//6. Finding "S"
+//6. FINDING "S"
+const findingS = names.map((name) => {
+  //checking if names include the letter "S"
+  if (name.includes("S")) return true;
+  else return false;
+});
+console.log(findingS);
 
 //7. Creating Object Mapping
+const nameProvinceObject = names.reduce((acc, currentName, currentIndex) => {
+  acc[currentName] = provinces[currentIndex]; //creating the object with key "currentName" and value "provinces[currentIndex]"
+  return acc;
+}, {});
+console.log(nameProvinceObject);
+///////////////////////////////////////////////////ADVANCED EXERCISES////////////////////////////////////////////////////
 
 //ADVANCED EXERCISES//
